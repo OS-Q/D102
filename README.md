@@ -2,7 +2,7 @@
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
-#### 归属桥接管道：[M4](https://github.com/OS-Q/M4)
+#### 归属通道转换：[W14](https://github.com/OS-Q/W14)
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
 
@@ -10,7 +10,15 @@
 
 USB通道设备，将其他各种MCU外设转换为USB通信，实现通信方式和协议适配
 
-### [共用资源](https://github.com/OS-Q/D92/wiki/) 
+### [资源](OS-Q/)
+
+#### [文档资料](docs/)
+
+包括主要的芯片手册，设计参考等
+
+#### [工程代码](project/)
+
+包括软件工程文件
 
 ---
 
