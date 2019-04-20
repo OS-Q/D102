@@ -1,60 +1,23 @@
-﻿# D92：[USB转换](https://github.com/OS-Q/D92)
-
+﻿# [USB转换](https://github.com/OS-Q/D92)
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
-
-#### 归属有线转换：[W14](https://github.com/OS-Q/W14)
-
+#### 归属接口转换：[W14](https://github.com/OS-Q/W14)
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
+Edge-Q -> 体系 Q[1,4] -> 节点 M[1,12] -> 平台 W[1,52] -> 设备 D[1,365]
+### [设备描述](https://github.com/OS-Q/D92/wiki) 
 
-## [设备描述](https://github.com/OS-Q/D92/wiki) 
+USB接口转换设备，采用可编程转换芯片，实现USB设备和IO设备通信间的转换，包括USB转串口等外设。
 
-USB转换设备，用于为其他设备提供USB通信接口并进行相关协议或数据的转换
+采用价格低廉的USB单片机实现USB和串口的转换。本工程用于相应协议和逻辑控制，保证输入输出接口一致。
 
-### [资源](OS-Q/)
+- [CH54x单片机资源](https://github.com/sochub/CH54)
+- [CH55x单片机资源](https://github.com/sochub/CH55)
 
-#### [文档资料](docs/)
+### [设备资源](https://github.com/OS-Q/D92) 
 
-主要的芯片手册和参考设计
-
-#### [工程代码](project/)
-
-包括软件工程文件
-
----
-
-- 边缘设备命名规则：体系 Q:[1,4] -> 节点 M:[1,12] -> 平台 W:[1,52] -> 设备 D:[1,365]
-
-- naming patterns：system Q[1,4] -> node M[1,12] -> platform W[1,52] -> device D[1,365]
-
-## [同级设备](https://github.com/OS-Q/W14/wiki) 
-
-#### -> D92：[USB](https://github.com/OS-Q/D92)
-
-将数据转换为USB通信数据，方便适配各种标准设备
-
-#### D93：[RS485](https://github.com/OS-Q/D93)
-
-将数据转换为RS485信号，用于长距离和控制类适配
-
-#### D94：[Ethernet](https://github.com/OS-Q/D94)
-
-通过以太网转发数据，实现数据入网或者长距通信
-
-#### D95：[NULL](https://github.com/OS-Q/D95)
+- [资源](src/)
+- [文档](docs/)
+- [工程](project/)
 
 
-#### D96：[NULL](https://github.com/OS-Q/D96)
-
-
-
-#### D97：[NULL](https://github.com/OS-Q/D97)
-
-
-
-#### D98：[NULL](https://github.com/OS-Q/D98)
-
----
-
-####  © qitas@qitas.cn
-###  [OS-Q redefined Operation System](http://www.OS-Q.com)
-####  @ 2019-1-7
+### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/D92)
+####  2019-4-21  
