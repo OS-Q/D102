@@ -1,33 +1,19 @@
-﻿# [USB转换](https://github.com/OS-Q/D95)
+﻿# [LoRa](https://github.com/OS-Q/D102)
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
-#### 归属接口转换：[W14](https://github.com/OS-Q/W14)
+#### 归属无线通信：[W15](https://github.com/OS-Q/W15)
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
-Edge-Q -> 体系 Q[1,4] -> 节点 M[1,12] -> 平台 W[1,52] -> 设备 D[1,365]
-### [设备描述](https://github.com/OS-Q/D95/wiki) 
 
-USB接口转换设备，采用可编程转换芯片，实现USB设备和IO设备通信间的转换，包括USB转串口等外设。
+[EDGE-Q](https://github.com/OS-Q/EDGE-Q) -> Q[4] -> M[12] -> W[52] -> D[365] -> H[24] -> N[60] -> S[60]
 
-采用价格低廉的USB单片机实现USB和串口的转换。本工程用于相应协议和逻辑控制，保证输入输出接口一致。
+### [设备描述](https://github.com/OS-Q/D102/wiki) 
 
-- [CH54x单片机资源](https://github.com/sochub/CH54)
-- [CH55x单片机资源](https://github.com/sochub/CH55)
+[LoRa](https://github.com/OS-Q/D102)基于arduino平台构建的功能库，用于实现LoRa通信
 
-### [设备资源](https://github.com/OS-Q/D95) 
+### [设备资源](https://github.com/OS-Q/D102) 
 
-- [资源](src/)
-- [文档](docs/)
-- [工程](project/)
+* [文档](docs/)
+* [资源](src/)
+* [示例](examples/)
 
-### [设备相关](https://github.com/OS-Q/D95) 
-
-* W14：[电气转换](https://github.com/OS-Q/W14)
-	* D92：[IIC](https://github.com/OS-Q/D92)
-	* D93：[RS485-L](https://github.com/OS-Q/D93)
-	* D94：[RS485-A](https://github.com/OS-Q/D94)
-	* D95：USB-L
-	* D96：[USB-A](https://github.com/OS-Q/D96)
-	* D97：[Ethernet-L](https://github.com/OS-Q/D97)
-	* D98：[Ethernet-A](https://github.com/OS-Q/D98)
-
-### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/D95)
-####  2019-5-13 
+### [OS-Q = Open Solutions | Open Source |  Operating System ](http://www.OS-Q.com/D102)
+####  2019-9-4
