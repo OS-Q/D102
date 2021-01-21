@@ -1,5 +1,12 @@
-*.db
+*.pyc
 *.pio/
 *.vscode/
+*.rst
+*.rel
+*.sym
+*.lst
+*.asm
+*.bin
+*.ihx
 *.map
-*.DS_Store
+*.lk

@@ -21,7 +21,7 @@ LD       = sdld
 AS       = sdasstm8
 OBJCOPY  = sdobjcopy
 ASFLAGS  = -plosgff
-CFLAGS   = -m$(ARCH) -p$(MCU) -D$(FAMILY) -I.
+CFLAGS   = -m$(ARCH) -p$(MCU) -D$(FAMILY) -I. -I../include
 CFLAGS  += --stack-auto --noinduction --use-non-free --noinvariant --opt-code-size
 LDFLAGS  = -m$(ARCH) -l$(ARCH) --out-fmt-ihx
 LDFLAGS += -Wl-bIVT=0x8000 -Wl-bGSINIT=0x8080

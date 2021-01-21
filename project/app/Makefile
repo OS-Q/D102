@@ -1,7 +1,7 @@
 MCU     ?= stm8s003f3
 FAMILY  ?= STM8S
-ARCH     = stm8
-
+ARCH  	= stm8
+LIBDIR	= ../include
 F_CPU   ?= 2000000
 TARGET  ?= main.ihx
 
