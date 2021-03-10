@@ -4,7 +4,7 @@ ARCH  	= stm8
 LIBDIR	= ../include
 F_CPU   ?= 2000000
 TARGET  ?= main.ihx
-
+NAME  	?= app
 SRCS    := $(wildcard *.c)
 OBJS     = $(SRCS:.c=.rel)
 
@@ -20,14 +20,18 @@ LDFLAGS  = -m$(ARCH) -l$(ARCH) --out-fmt-ihx
 ## RELOCATE_IVT set to 1:
 LDFLAGS += --code-loc 0x8280
 
-all: $(TARGET)
+all: $(TARGET) size
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
-	$(PACK_HEX) $(TARGET) > app.hex
-	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) app.bin
-	cp app.bin ../build/
-	cp app.hex ../build/
+	$(PACK_HEX) $(TARGET) > $(NAME).hex
+	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(NAME).bin
+	cp $(NAME).bin ../build/
+	cp $(NAME).hex ../build/
+
+size:
+	@echo "-----\nApp Image size:"
+	@stat -L -c %s $(NAME).bin
 
 %.rel: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

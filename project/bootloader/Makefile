@@ -7,7 +7,7 @@ FAMILY  ?= STM8S
 # FAMILY  ?= STM8L
 
 ARCH     = stm8
-
+NAME  	?= bootloader
 TARGET  ?= main.ihx
 
 SRCS    := $(wildcard *.c)
@@ -31,8 +31,10 @@ all: $(TARGET) size
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
-	$(PACK_HEX) $(TARGET) > boot.hex
-	cp boot.hex ../build/
+	$(PACK_HEX) $(TARGET) > $(NAME).hex
+	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(NAME).bin
+	cp $(NAME).hex ../build/
+	cp $(NAME).bin ../build/
 
 %.rel: %.s
 	$(AS) $(ASFLAGS) $<
@@ -47,10 +49,8 @@ clean:
 	rm -f *.map *.rel *.ihx *.o *.sym *.lk *.lst *.rst *.cdb *.bin *.asm
 
 size:
-	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(TARGET).bin
-	@echo "-----\nBIN Image size:"
-	@stat -L -c %s $(TARGET).bin
-	cp $(TARGET).bin ../build/
+	@echo "-----\nBoot Image size:"
+	@stat -L -c %s $(NAME).bin
 
 ## @TODO: separate option-bytes for stm8s and stm8l!
 # enable write-protection on first 10 pages
