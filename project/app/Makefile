@@ -10,6 +10,7 @@ OBJS     = $(SRCS:.c=.rel)
 
 CC       = sdcc
 OBJCOPY  = sdobjcopy
+PACK_HEX = packihx
 CFLAGS   = -m$(ARCH) -p$(MCU) -D$(FAMILY)
 CFLAGS  += -DF_CPU=$(F_CPU)UL -I. -I$(LIBDIR)
 CFLAGS  += --stack-auto --noinduction --use-non-free
@@ -23,7 +24,10 @@ all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
-	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) firmware.bin
+	$(PACK_HEX) $(TARGET) > app.hex
+	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) app.bin
+	cp app.bin ../build/
+	cp app.hex ../build/
 
 %.rel: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

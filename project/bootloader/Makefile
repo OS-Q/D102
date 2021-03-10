@@ -20,6 +20,7 @@ CC       = sdcc
 LD       = sdld
 AS       = sdasstm8
 OBJCOPY  = sdobjcopy
+PACK_HEX = packihx
 ASFLAGS  = -plosgff
 CFLAGS   = -m$(ARCH) -p$(MCU) -D$(FAMILY) -I. -I../include
 CFLAGS  += --stack-auto --noinduction --use-non-free --noinvariant --opt-code-size
@@ -30,6 +31,8 @@ all: $(TARGET) size
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
+	$(PACK_HEX) $(TARGET) > boot.hex
+	cp boot.hex ../build/
 
 %.rel: %.s
 	$(AS) $(ASFLAGS) $<
@@ -45,8 +48,9 @@ clean:
 
 size:
 	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(TARGET).bin
-	@echo "-----\nImage size:"
+	@echo "-----\nBIN Image size:"
 	@stat -L -c %s $(TARGET).bin
+	cp $(TARGET).bin ../build/
 
 ## @TODO: separate option-bytes for stm8s and stm8l!
 # enable write-protection on first 10 pages

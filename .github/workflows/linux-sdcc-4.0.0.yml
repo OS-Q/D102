@@ -33,3 +33,8 @@ jobs:
     - name: Build Bootloader
       run: make
       working-directory: project/bootloader/
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: sdcc-build
+        path: project/build
